@@ -16,23 +16,23 @@ pipeline {
     stages {
         stage('Make executable') {
             steps {
-                sh('python ..\scripts\fibonacci_series.py')
+                sh('python ..\\scripts\\fibonacci_series.py')
             }
         }
         stage('Relative path') {
             steps {
-                sh("python ..\scripts\fibonacci_series.py ${env.NUMBER}")
+                sh("python ..\\scripts\\fibonacci_series.py ${env.NUMBER}")
             }
         }
         stage('Full path') {
             steps {
-                sh("${env.WORKSPACE}\scripts\fibonacci_series.py ${env.NUMBER}")
+                sh("${env.WORKSPACE}\\scripts\\fibonacci_series.py ${env.NUMBER}")
             }
         }
         stage('Change directory') {
             steps {
-                dir("${env.WORKSPACE}\scripts") {
-                    sh("..\fibonacci_series.py ${env.NUMBER}")
+                dir("${env.WORKSPACE}\\scripts") {
+                    sh("..\\fibonacci_series.py ${env.NUMBER}")
                 }
             }
         }
