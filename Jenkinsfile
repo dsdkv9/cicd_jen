@@ -16,22 +16,22 @@ pipeline {
     stages {
         stage('Make executable') {
             steps {
-                sh('python ..\\scripts\\fibonacci_series.py')
+                sh('python D:\\Git_Personal\\DevOps_Jenkins\\cicd_jen\\scripts\\fibonacci_series.py')
             }
         }
         stage('Relative path') {
             steps {
-                sh("python ..\\scripts\\fibonacci_series.py ${env.NUMBER}")
+                sh("python D:\\Git_Personal\\DevOps_Jenkins\\cicd_jen\\scripts\\fibonacci_series.py ${env.NUMBER}")
             }
         }
         stage('Full path') {
             steps {
-                sh("${env.WORKSPACE}\\scripts\\fibonacci_series.py ${env.NUMBER}")
+                sh("D:\\Git_Personal\\DevOps_Jenkins\\cicd_jen\\scripts\\fibonacci_series.py ${env.NUMBER}")
             }
         }
         stage('Change directory') {
             steps {
-                dir("${env.WORKSPACE}\\scripts") {
+                dir("D:\\Git_Personal\\DevOps_Jenkins\\cicd_jen\\scripts") {
                     sh("..\\fibonacci_series.py ${env.NUMBER}")
                 }
             }
