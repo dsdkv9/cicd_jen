@@ -19,22 +19,5 @@ pipeline {
                 sh('python D:\\Git_Personal\\DevOps_Jenkins\\cicd_jen\\scripts\\fibonacci_series.py')
             }
         }
-        stage('Relative path') {
-            steps {
-                sh("python D:\\Git_Personal\\DevOps_Jenkins\\cicd_jen\\scripts\\fibonacci_series.py ${env.NUMBER}")
-            }
-        }
-        stage('Full path') {
-            steps {
-                sh("D:\\Git_Personal\\DevOps_Jenkins\\cicd_jen\\scripts\\fibonacci_series.py ${env.NUMBER}")
-            }
-        }
-        stage('Change directory') {
-            steps {
-                dir("D:\\Git_Personal\\DevOps_Jenkins\\cicd_jen\\scripts") {
-                    sh("..\\fibonacci_series.py ${env.NUMBER}")
-                }
-            }
-        }
     }
 }
