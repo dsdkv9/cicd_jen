@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Make executable') {
             steps {
-                sh('python D:\\Git_Personal\\DevOps_Jenkins\\cicd_jen\\scripts\\fibonacci_series.py')
+                sh 'python D:\\Git_Personal\\DevOps_Jenkins\\cicd_jen\\scripts\\fibonacci_series.py'
             }
         }
     }
